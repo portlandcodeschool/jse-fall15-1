@@ -125,4 +125,4 @@ Assuming variables _n_ and _d_ are defined in advance (but you don't know their 
 
 a) Solve it first by making use of a function called _Math.floor_.
 
-b) Now solve it without calling any functions, using merely operators.  (_Hint: you'll need at least the modulo operator _%_.)
+b) Now solve it without calling any functions, using merely operators.  (Hint: you'll need at least the modulo operator _%_.)

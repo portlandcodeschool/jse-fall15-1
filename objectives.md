@@ -1,32 +1,34 @@
 ## terminal
 
-_You should understand the meaning of the following terminology and commands:_
+You should understand the meaning of the following terminal commands and related words:
 
-bash, shell,
+bash, shell, root, path,
 .  ..  ~   /  *
-cd, ls, pwd, cp, mv, mkdir, rm, rmdir,
+_cd, ls, pwd, cp, mv, mkdir, rm, rmdir,
 sudo, chmod, chown, ps, top, man, which,
 history, more, less, head, tail, env, $PATH,
-node, vim, emacs, git
+node, vim, emacs, git_
 
 
 ## git
 
 ### Jargon
 
-_You should understand the meaning of the following _git_ terminology:_
+You should understand the meaning of the following _git_ terminology:
 
-local repo, remote repo, origin, clone, branch,
-checkout, add, remove, commit, staging area,
-merge, push, pull,
+_local repo, remote repo, working directory,
+origin, clone, branch, status,
+checkout, add, remove, commit, staged, untracked,
+merge, push, pull_
 
 
 ### Skills
 
-_You should be able to do the following basic _git_ actions:_
+You should be able to do the following basic _git_ actions:
 
 * Create a repository
 * Clone a repository
+* Check the status of a local repo
 * Create a new local branch
 * Move from one branch to another
 * Add changes to be committed
@@ -39,7 +41,7 @@ _You should be able to do the following basic _git_ actions:_
 
 ### Jargon
 
-_You should understand the meaning and behavior of the following:_
+You should understand the meaning and behavior of the following:
 
 * Operators:
 
@@ -48,10 +50,9 @@ _You should understand the meaning and behavior of the following:_
 - / * %
 == === != !== < > <= >=
 = += -= /= *= %=
-++&#9634; --&#9634;
-&#9634;++ &#9634;--
+++X --X X++ X--
 ! && ||
-&#9634;?&#9634;:&#9634;
+X?Y:Z
 typeof
 ```
 
@@ -76,16 +77,17 @@ Infinity
 
 * Vocabulary:
 
-infix, prefix, postfix, unary, binary, ternary,
+_infix, prefix, postfix, unary, binary, ternary,
 evaluation, operator, operand, type,
 number, integer, float, string, numeric string,
+string literal, concatenation, interpolation,
 boolean, expression, statement, primitive,
 auto-conversion, type coercion, parsing, precedence,
 declare, initialize, keyword, REPL, mod,
-conditional, condition, consequent, block, short-circuit, truthy/truish, falsey/falsish
+conditional, condition, consequent, block, short-circuit, truthy/truish, falsey/falsish_
 
 ### Skills
-_You should be able to:_
+You should be able to:
 
 * Work confidently in the console of at least one browser and in the node REPL.
 
@@ -95,7 +97,7 @@ _You should be able to:_
 
 * Use short-circuit boolean operators in conditional evaluation.
 
-* Anticipate the behavior of special Numbers (_NaN, Infinity_) and non-integers in computations.
+* Anticipate the behavior of special Numbers (_NaN, Infinity_), non-integer numbers, and non-numbers in computations.
 
 * Use common mathematical functions from the Math and Number objects.
 
