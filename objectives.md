@@ -111,3 +111,5 @@ You should be able to:
 
 * Reason about the possible behavior of expressions which contain some unknown values.
 
+* Trace on paper the execution of simple programs.
+
