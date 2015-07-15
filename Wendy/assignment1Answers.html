@@ -13,7 +13,10 @@
 	<body>
 
 		<div id="wrap">
-			<div class= "container">
+			<h1> JavaScript Immersion Assignment I </h1>
+			<h3> by Wendy Goodwin </h3>	
+			<div class="row" id="part1">
+				<h3> Part I </h3>
 				<div class="col-md-4">
 					<h3>a) "1" == 1  true.</h3>
 					<p>The == equality operator says "kind of the same" and they are.  Javascript reads the equality operator from right to left and changes the operators to the same type if needed.  
@@ -32,8 +35,8 @@
 
 					<h3>f) x = true  true.</h3>
 					<p>  Assigning the boolean value of true to x.</p>
-
 				</div>
+
 				<div class="col-md-4">
 					<h3>g) var x; x == 'undefined'  false.</h3> 
 					<p>It seems like the intent was to initialize a variable but leave it as undefined.  However, variables are already undefined until they are initialzed.  Moreover, the =='undefined' is shown as a string not a value.  Undefined would be a value not a string.</p>  
@@ -50,8 +53,7 @@
 
 					<h3>l) x++ == ++x false. </h3> 
 					<p>x++ Is typically seen in loops and means to increment.  ++x would mean addition operator and positive number x.  So x++ is typically increment by one, plus positive x would not necessarily be the same thing.</p>
-
-					
+	
 				</div>
 				<div class="col-md-4">
 					<h3>m) ++x == x++ false if x is a string.  true if x is a number.</h3>
@@ -71,14 +73,37 @@
 					<h3>r) (x=(typeof (x+(typeof x))))==x true.  
 					</h3>
 					<p>This is all just saying that x is equal to x.  The typeofs don't change that. It's just saying that x == x.  It also interestingly returns string.  I'm not 100% sure why that is.</p>
+				</div>
 			</div>
-		</div>
 
-		<div class = "references">
+			<div class = "references">
 			<ul>
 				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"> MDN Operator Precedence</a></li>
 				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators"> MDN Information on Comparisons</a></li>
-			
+			</div>
+			<div class="row" id="part2">
+			<h3> Part II </h3>	
+				<div class="col-md-12">
+					<ul>
+						<li> x, y, z are numbers</li>
+						<li> The mean which I have called var a = (x + y + z) / 3 </li> 
+						<li> var b is half of the mean </li>
+						<li> b = a / 2 </li>
+						<li> x = x + b </li>
+						<li> y = y + b </li>
+						<li> z = z + b </li>
+				</div>
+				
+
+
+
+
+
+					</ul>
+
+
+				</div>
+			</div>			
 
 		</div>
 

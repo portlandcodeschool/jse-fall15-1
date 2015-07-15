@@ -1,1 +1,16 @@
-mystyles.css
+#part1  {
+	background-color: lightBlue;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+.row {
+	margin: .25em;
+	padding: .25em;
+}
+
+#part2 {
+	background-color: lightYellow;
+}
