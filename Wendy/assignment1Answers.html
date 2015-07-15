@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JavaScript Immersion Assignment 1 || Wendy Goodwin</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+	    <link href="css/main.css" rel="stylesheet">    
+	    <link href="css/mystyles.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div id="wrap">
+			<div class= "container">
+				<div class="col-md-4">
+					<h3>a) "1" == 1  true.</h3>
+					<p>The == equality operator says "kind of the same" and they are.  Javascript reads the equality operator from right to left and changes the operators to the same type if needed.  
+
+					<h3>b) "1" === 1 false.</h3>
+					<p>The "===" is "exactly equal to"  No room for kind of.</p>
+
+					<h3>c) x == 'x'  false.</h3>
+					<p>  If x is defined as a string, the 'x' is saying string 'x' and if your string is for example var x = 'snowman', 'snowman' != 'x'.  If x is a number, it is still false because a number is not a string.</p>
+
+
+					<h3>d) x == (x+'') true.</h3>
+					<p>This is essentially saying that x + nothing is equal to x.</p>
+
+					<h3>e) '' == ' ' false.</h3>  Nothing is not equal to a space.  A space is something.</h3>
+
+					<h3>f) x = true  true.</h3>
+					<p>  Assigning the boolean value of true to x.</p>
+
+				</div>
+				<div class="col-md-4">
+					<h3>g) var x; x == 'undefined'  false.</h3> 
+					<p>It seems like the intent was to initialize a variable but leave it as undefined.  However, variables are already undefined until they are initialzed.  Moreover, the =='undefined' is shown as a string not a value.  Undefined would be a value not a string.</p>  
+
+					<h3>h) '9'<'10' false.</h3>
+					<p>  '' makes these strings not numbers and so they inherently do not have values.</p>
+
+					<h3>i) typeof x + 1 === "number" false. </h3> <p>typeof returns what type of variable x is.  If x is a number, the return would be "number1"-- it concatenates.  If x were a string, the return would be "string1".  Typeof is going to return a description not literally what it is.</p>
+
+					<h3>j) typeof x % 2 === "number" nope.</h3> 
+					<p>Still false.  This isn't the right way to use the typeof operator.  It is used to determine the type of JavaScript variable.</p>
+
+					<h3>k) typeof (x % 2) === "number"  true.</h3><p>Javascript reads from left to right but the paranthesis group x with modulo 2.  Seems that modulo IS a number so even if x were defined as a string and the second value was also a string instead of the number 2, it would still be correct to have the === be "number".</p>
+
+					<h3>l) x++ == ++x false. </h3> 
+					<p>x++ Is typically seen in loops and means to increment.  ++x would mean addition operator and positive number x.  So x++ is typically increment by one, plus positive x would not necessarily be the same thing.</p>
+
+					
+				</div>
+				<div class="col-md-4">
+					<h3>m) ++x == x++ false if x is a string.  true if x is a number.</h3>
+					<p>  True because ++x is saying "plus positive x" and that is sort of the same as x++ (incrementing).</p>
+
+					<h3>n) "1"+x == 1+x  false. </h3>
+					<p> Javascript sees that 1 is a string and so it's going to want to concatenate.  The answer on the right should thus be 1 concatenated with whatever x was. . . for example, if x = 6, "1" + x would equal "16".  The answer on the right is shown as numbers.</p>
+
+					<h3>o) "0"+1 == 1  true.  </h3>
+					<p>Javascript can ignore entirely the 0 in this case, it's a string.  And since we're asking if this is kind of true with just the == and not the === then it is kind of true.  JS is assuming that the string "0" has no value.</p>
+
+					<h3>p) (typeof (x+1))===(typeof x) true. </h3><p>This is just comparing the types of variables.  Whethers numbers or strings, it's still asking if x is the same type as x.</p>
+
+					<h3>q) (x*1 == x) || ((typeof x) != "number") true.</h3>
+					<p>  the || means if EITHER of these statements is true, than the whole statement is true.  If x is a number, both statemetns are true.  If x is a string, then the first statement is false because (x*1) is undefined.</p>
+
+					<h3>r) (x=(typeof (x+(typeof x))))==x true.  
+					</h3>
+					<p>This is all just saying that x is equal to x.  The typeofs don't change that. It's just saying that x == x.  It also interestingly returns string.  I'm not 100% sure why that is.</p>
+			</div>
+		</div>
+
+		<div class = "references">
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"> MDN Operator Precedence</a></li>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators"> MDN Information on Comparisons</a></li>
+			
+
+		</div>
+
+
+
+
+
+
+
+</div>
+</body>
