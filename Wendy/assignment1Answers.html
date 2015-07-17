@@ -28,8 +28,8 @@
 					<p>  If x is defined as a string, the 'x' is saying string 'x' and if your string is for example var x = 'snowman', 'snowman' != 'x'.  If x is a number, it is still false because a number is not a string.</p>
 
 
-					<h3>d) x == (x+'') true.</h3>
-					<p>This is essentially saying that x + nothing is equal to x.</p>
+					<h3>d) x == (x+'') false.</h3>
+					<p>This is false because the '' empty quotes make things falsy!</p>
 
 					<h3>e) '' == ' ' false.</h3>  Nothing is not equal to a space.  A space is something.</h3>
 
@@ -75,37 +75,78 @@
 					<p>This is all just saying that x is equal to x.  The typeofs don't change that. It's just saying that x == x.  It also interestingly returns string.  I'm not 100% sure why that is.</p>
 				</div>
 			</div>
-
-			<div class = "references">
-			<ul>
-				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"> MDN Operator Precedence</a></li>
-				<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators"> MDN Information on Comparisons</a></li>
+			<div class="row" "references">
+			<h3>Resources used</h3>
+				<div class="col-md-12">
+				<ul>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"> MDN Operator Precedence</a></li>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators"> MDN Information on Comparisons</a></li>
+				</div>
 			</div>
 			<div class="row" id="part2">
 			<h3> Part II </h3>	
 				<div class="col-md-12">
 					<ul>
-						<li> x, y, z are numbers</li>
-						<li> The mean which I have called var a = (x + y + z) / 3 </li> 
-						<li> var b is half of the mean </li>
-						<li> b = a / 2 </li>
-						<li> x = x + b </li>
-						<li> y = y + b </li>
-						<li> z = z + b </li>
-				</div>
-				
-
-
-
-
-
+						<li> a.  var mean = (x + y + z)/3</li>
+						<li> b.  x= x + (mean -x)*.5></li>
+						<li> b.(cont) y = y + (mean - y)*.5></li>
+						<li> b. (cont) z = z + (mean - z)*.5></li>
 					</ul>
+				</div>
+			</div>
+			<div class="row" id="part3">
+			<h3> Part III </h3>
+				<div class="col-md-6">	
+				<h3> a.  Calculating Area of Rectangle</h3>
+				<ul>
+					<li> area = (l * t)
+				</ul>
+				<h3> b.  True If the rectangle is taller than it is wide... </h3>
+				<ul>
+					<li> area for rectangle with taller than wide (l * t)&&!(l<=t) </li>
+				</ul>	
+				<h3> c.  Rectangle enclosing circle </h3>
+				<ul>	
+					<li> var circumference; </li>
+					<li> !(l<=t)&&((t*Math.PI)</li>
+				</ul>
+				</div>
+				<div class="col-md-6">
+				<h3> d.  The circle enclosing the rectangle</h3>
+				<ul>
+					<li> (l<=t)&&(t*Math.PI)||!(l<=t)&&(l*Math.PI) </li>
+				</ul>
+				<h3> e.  Variables for expressing smaller rectangles</h3>
+				<ul>
+					<li> var areaSmall (to represent the center small rectangle)</li>
+					<li> 1. areaSmall = (t/3)*(l/3)</li>
+					<li> var tallSmall (to represent the tallest side)</li>
+					<li> 2. var tallSmall = (l>=t)&&(l/3)||!(l>=t)&&(t/3)</li>
+					<li> var shortSmall (to reperesent the shorter side)</li>
+					<li> 3. var shortSmall = (l<=t)&&(l/3)||(t<=l)&&(t/3)</li>
+					<li> var square (boolean checking if the small rectangle is a square)
+					</li> 4. varSquare = ((t-l) === 0)</li>
+				</ul>
+				</div>
+			</div>	
+			<div class="row" "references">
+			<h3>Resources used</h3>
+				<div class="col-md-12">
+				<ul>
+					<li><a href="http://www.w3schools.com/jsref/jsref_pi.asp"> Math.PI info</a></li>
+					<li><a href="http://www.w3schools.com/js/js_variables.asp"> Specific Definitions for Variables in JavaScript</a></li>
+				</div>
+			</div>		
+			<div class="row" id ="part4">
+			<h3>Part IV</h3>
+				<div class="col-md-4">
+					
 
 
 				</div>
-			</div>			
-
+			</div>
 		</div>
+
 
 
 
