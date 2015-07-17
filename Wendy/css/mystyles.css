@@ -1,3 +1,10 @@
+.title {
+	background-color: lightGray;
+	padding: 1em;
+}
+
+
+
 #part1  {
 	background-color: lightBlue;
 }
@@ -16,4 +23,8 @@ h3 {
 }
 #part3{
 	background-color: lightPink;
+}
+
+img {
+	max-width: 75%;
 }
