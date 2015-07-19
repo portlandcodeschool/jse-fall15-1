@@ -104,9 +104,11 @@ Write an expression for the mean (i.e. average) of x, y, and z.
 Write a series of expressions to adjust each of x, y, and z halfway toward the mean of the three.
 That is, reset the value of each variable to something new based on its previous value.
 
-```x = x - ( x - mean )/2
+```
+x = x - ( x - mean )/2
 y = y - ( y - mean )/2
-z = z - ( z - mean )/2```
+z = z - ( z - mean )/2
+```
 
 **3)** (_20%_)
 
@@ -124,47 +126,57 @@ Write an expression for the rectangle's area.
 
 or
 
-```var width = r - l
+```
+var width = r - l
 var height = t - b
-var area = width * height```
+var area = width * height
+```
 
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 
-```if (height > width) {
+```
+if (height > width) {
   true;
 } else {
   false;
-}```
+}
+```
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 
-```if ( width <= height ) {
+```
+if ( width <= height ) {
   circumference = width * Math.PI;
 } else {
   circumference = height * Math.PI;
-}```
+}
+```
 
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
 
 Knowing that the area of a circle is (radius^2) * Pi:
 
-```var radiusSquared = Math.pow(width/2, 2) + Math.pow(height/2, 2)
-var smallestCircleArea = radiusSquared * Math.PI```
+```
+var radiusSquared = Math.pow(width/2, 2) + Math.pow(height/2, 2)
+var smallestCircleArea = radiusSquared * Math.PI
+```
 
 **e)**
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
-```var height = t - b
+```
+var height = t - b
 var width = r - l
 var new_t = t - height/3
 var new_b = b + height/3
 var new_r = r - width/3
-var new_l = l + width/3```
+var new_l = l + width/3
+```
 
 **4)** (_25%_)
 
@@ -189,11 +201,13 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression (or pair of conditional statements) to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N (or a subset of them, if you don't need all three).
 
-```if ( N % 2 === 0 ) {
+```
+if ( N % 2 === 0 ) {
   color = 'black';
 } else {
   color = 'white';
-}```
+}
+```
 
 **5)** (_15%_)
 
