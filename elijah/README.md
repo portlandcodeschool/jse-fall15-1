@@ -147,8 +147,13 @@ Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which 
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
-    // rectangle will be 6x9
+    width = (r - l);
+    height = (b - t);
 
+    cl = width/3;
+    cr = width - (width/3);
+    ct = height/3;
+    cb = height - (height/3);
 
 ---
 
