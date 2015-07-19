@@ -4,8 +4,8 @@
 You need to turn in this homework by 
 
 [X]cloning this repo, 
-[]making a new branch with your solutions, 
-[]pushing to github, and 
+[X]making a new branch with your solutions, 
+[X]pushing to github, and 
 []issuing a pull request.
 
 For details, follow the instructions [here](http://portlandcodeschool.github.io/jse/2015/01/07/command-line-and-git-slides/#/14).
@@ -191,16 +191,36 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 
 * Each square has integer coordinates _(R,C)_ describing its row and column.  Both values should be in the range 0..7, so that the upper-left square is at (0,0) and the bottom-right is at (7,7).
 
+RC = "Integer Coordinates"
+R = "row integer"
+C = "column integer"
+RC = (R, C)
+
 * Each square has a unique integer number N from 0 to 63.  These numbers run sequentially left-to-right one row at a time, top to bottom.  Therefore the upper-left square has N===0 and the bottom-right has N===63.
+
+N = "Integer # 0 to 63"
+
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
 
+N = C + (R * 8) 
+
 **b)**  Given N, find R.  Write an expression for R which contains N.
+
+R = Math.floor(N / 8)
 
 **c)**  Given N, find C.  Write an expression for C which contains N.
 
+C = N % 8
+
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression (or pair of conditional statements) to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N (or a subset of them, if you don't need all three).
+
+var color = black
+if (Math.even(N)) {
+	color = white;
+	} else { color = black;};
+
 
 ---
 
@@ -211,6 +231,15 @@ If _n_ is greater than _d_, the fraction is "improper", but it can be rewritten 
 
 Assuming variables _n_ and _d_ are defined in advance (but you don't know their values), write a series of expressions to generate a string expressing the proper form of the fraction _n/d_.  For example, when _n===7_ and _d===4_, your resulting string should be "1 3/4".  You may assume both _n_ and _d_ are positive integers and _n_ > _d_, but otherwise you should be able to handle any values of _n_ and _d_.
 
+n = numerator
+d = denominator
+
 a) Solve it first by making use of a function called _Math.floor_.
 
+print(Math.floor(n/d) + " " + n%d + "/" + d)
+
+
 b) Now solve it without calling any functions, using merely operators.  (Hint: you'll need at least the modulo operator _%_.)
+
+print(n/d + " " + n%d + "/" + d)
+
