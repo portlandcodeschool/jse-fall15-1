@@ -38,13 +38,13 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **k)** `typeof (x % 2) === "number"` True, but I can't explain why. Somehow the parenthesis fixes things.
 
-**l)** `x++ == ++x` False, but I don't know why.
+**l)** `x++ == ++x` False, but I can't explain why.
 
-**m)** `++x == x++` True, but I don't know why. Where did all of these +'s come from??
+**m)** `++x == x++` True, but I can't explain why.
 
-**n)** `"1"+x == 1+x` False.
+**n)** `"1"+x == 1+x` False. x is undefined and therefore false-y.
 
-**o)** `"0"+1 == 1` True. 
+**o)** `"0"+1 == 1` True. 0 is a real number, so the computer adds it to 1.
 
 **p)** `(typeof (x+1))===(typeof x)` False. The left side is a number and the right side is undefined.	
 
