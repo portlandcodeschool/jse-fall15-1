@@ -183,7 +183,9 @@ Write an expression (or pair of conditional statements) to set a variable _color
     var color;
     // assume n from previous
     // if divisible by 2
-    if (!(n%2)) {
+    if ((!(n%2)) && (!(r%2))) {
+        color = "black";
+    } else if ((!!(n%2)) &&  (!!(r%2))) {
         color = "black";
     } else {
         color = "white";
