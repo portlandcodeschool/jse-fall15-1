@@ -54,7 +54,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 ---
 
-_All of the following can be solved with ordinary expressions and global variables with primitive values.  You don't need functions, loops, or other topics beyond our first two classes._
+All of the following can be solved with ordinary expressions and global variables with primitive values.  You don't need functions, loops, or other topics beyond our first two classes._
 
  **2)** (_10%_)
 
