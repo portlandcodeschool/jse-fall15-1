@@ -1,0 +1,113 @@
+PART 1:
+
+a) true, because == treats strings and numbers as being equal
+
+b) false, because === does NOT treat strings and numbers as being equal (i.e. === cares about type)
+
+c) true, for the same reason as a)
+
+d) false, because while x == "x" is true, x == "x " is false
+
+e) false, because the strings are different
+
+f) true, because the operator = outputs the input on the right and changes x to the value of the input on the right
+
+g) true, because declaring var x does not define it, and it remains undefined
+
+h) NaN, because < takes two numbers as its inputs and will not know how to evaluate two string inputs
+
+i) false, because typeof x is "number", and "number" + 1 is NaN, which is not the same as the string "number"
+
+j) false, for the same reason as i). "number" % 2 is NaN
+
+k) true when x is a number, because otherwise the result of x + 1 will not be a number
+
+l) true, because ++x converts x to a number and adds one, and x++ is the same as x = x + 1
+
+m) true, for the same reason as l)
+
+n) true, when x is a string. false when x is a number, because a + between two numbers adds the values rather than concatenating them. False when x is a boolean, because "1"+true evaluates to "1true" but 1+true treats true as the integer 1, outputting 2. False when x is undefined: "1"+ undefined is 1undefined, but 1+undefined is NaN
+
+o) true, because "1" == 1 since == is willing to ignore this type difference
+
+p) true when x is a number or a string (when x is a string, typeof(x+1) results in "string" due to type coercion). False when x is undefined, as typeof(undefined +1) is "number", but typeof undefined is "undefined"
+
+q) true, always. when typeof x is "number" x*1 is always x. Whenever x*1 == x is false, typeof x != "number"
+
+r) true, always. by definition, x == x. The problem could be rewritten as:
+ x = (typeof (x+ (typeof x)));
+ x == x;
+
+ because the output of the first line (or the left side of the equation in the given format) is the value assigned to x
+
+ PART 2:
+
+ a) (x+y+z) / 3
+
+ b) ( (mean - x) / 2) + x
+ ( (mean - x) / 2) + y
+ ( (mean - x) / 2) + z
+
+ PART 3:
+
+ a) (r-l) * (t-b)
+
+ b)(r-l) < (t-b)
+
+ c) if ( (r-l) >= (t-b) ) {
+ 		var maxCirc = ( Math.PI() * 2 ) * ( (r-l) / 2 );
+ 	} else {
+ 		var maxCirc = ( Math.PI() * 2 ) * ( (t-b) / 2 );
+ }
+
+ d) minArea = ( ( Math.PI() * 2 ) * ( Math.sqrt( ( r*r ) + ( b*b ) ) / 2 ) )
+
+ e) r2 = r / 3
+ l2 = l / 3
+ t2 = t / 3
+ b2 = b / 3
+
+ PART 4:
+
+ a) N = ( (R+1) * C ) + R
+
+ b) R = ( (N-R) / C) + 1
+
+ c) C = ( (N-R) / (R + 1))
+
+ d) if (R === 0 || R % 2 === 0) {
+ 		if (C === 0 || C % 2 === 0) {
+ 			var color = black;
+ 		} else var color = white;
+	} else if (R % 2 != 0) {
+		if (C % 2 != 0) {
+			var color = white;
+		} else var color = black;
+	}
+
+PART 5:
+
+a) var properFrac = function(n,d) {
+  if (n >= d && n%d != 0) {				/* If it's improper and n is not divisible by d*/
+    var wholeNum = ( Math.floor(n/d) );		/* Number of times n goes into d completely */
+    var remainder = n%d;
+    console.log( wholeNum + " " + remainder + "/" + d ); 
+  } else if (n % d === 0) {				/* If n is divisible by d, just simplify the expression */
+    	console.log( (n/d) );
+}	
+  } else {								/* Any other cases should be proper fractions, so just put a slash between them */
+    	console.log(n + "/" + d);
+  }
+};
+
+b) var properFrac = function(n,d) {
+  if (n >= d && n%d != 0) {
+    var wholeNum = ( (n/d) - ( ( (n%d) / d) ) );	/*Divide the remainder by d, then subtract that from the result of dividing n by d */
+    var remainder = n%d;
+    console.log( wholeNum + " " + remainder + "/" + d ); 
+  } else if (n % d === 0) {
+    console.log( (n/d) );
+  } else {
+    console.log(n + "/" + d);
+  }
+};
