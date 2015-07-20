@@ -126,7 +126,7 @@ binary,
 ternary,
 evaluation, 						<----review
 operator, 
-operand, 							<----review
+operand, 							<----review: the quantity on which an operation is to be done.
 type,
 number, 
 integer, 
@@ -147,7 +147,7 @@ precedence,
 declare, 
 initialize, 
 keyword, 
-REPL, 								<----review
+REPL, 								<----review: Read Evaluate Print Loop
 mod,
 conditional, 
 condition, 
