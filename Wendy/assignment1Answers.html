@@ -16,6 +16,12 @@
 			<div class="title">
 				<h1> JavaScript Immersion Assignment I </h1>
 				<h3> by Wendy Goodwin </h3>	
+				<h4> 
+
+					<a href="https//github/portlandcodeschool/jse=fall15-1">	View assignment specifications</a>
+
+
+				</h4>
 			</div>
 			<div class="row" id="part1">
 				<h3> Part I </h3>
@@ -77,13 +83,15 @@
 					<p>This is all just saying that x is equal to x.  The typeofs don't change that. It's just saying that x == x.  It also interestingly returns string.  I'm not 100% sure why that is.</p>
 				</div>
 			</div>
-			<div class="row" "references">
+			<div class="references">
+			<div class="row">
 			<h3>Resources used</h3>
 				<div class="col-md-12">
 				<ul>
 					<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"> MDN Operator Precedence</a></li>
 					<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators"> MDN Information on Comparisons</a></li>
 				</div>
+			</div>
 			</div>
 			<div class="row" id="part2">
 			<h3> Part II </h3>	
@@ -110,7 +118,7 @@
 				<h3> c.  Rectangle enclosing circle </h3>
 				<ul>	
 					<li> var circumference; </li>
-					<li> !(l<=t)&&((t*Math.PI)</li>
+					<li> !(l<t)&&((t*Math.PI)</li>
 				</ul>
 				</div>
 				<div class="col-md-6">
@@ -131,13 +139,16 @@
 				</ul>
 				</div>
 			</div>	
-			<div class="row" "references">
+			
+			<div class="references">
+			<div class="row">
 			<h3>Resources used</h3>
 				<div class="col-md-12">
 				<ul>
 					<li><a href="http://www.w3schools.com/jsref/jsref_pi.asp"> Math.PI info</a></li>
 					<li><a href="http://www.w3schools.com/js/js_variables.asp"> Specific Definitions for Variables in JavaScript</a></li>
 				</div>
+			</div>
 			</div>		
 			<div class="row" id ="part4">
 			<h3>Part IV</h3>
@@ -148,19 +159,45 @@
 						<li> a.) n = ((r*7)+(r+c))</li>
 						<li> b.) r = ((n-8)%8)</li>						
 						<li> c.) c = (n%8)</li>
-						<li> d.) black aka b = (n%2===0)
+						<li> d.) if((r+c)%2===0){
+							'black';
+						} else {
+							'white';
+						}
+						</li>
 					</ul>
 				</div>
+			
 				<div class="col-md-6">
 					<img src="img/checkerBoard.jpg"></img>
 				</div>
 			</div>
-		</div>
-
-
-
-
-
+			
+			<div class="row" id ="part5">
+			<h3>Part V</h3>
+			<h3>Represenation of a fraction (n/d) with 2 integer variables.</h3>
+				<div class="col-md-6">
+				<h3> Solving using Math.floor</h3>
+					<ul>
+						<li> var n is the numerator var d is the denominator</li>
+						<li> var a = Math.floor(n/d);</li>
+						<li> var b = (n -(d*a));</li>
+						<li> n = b;</li>
+						<lI> a + b + '/' + d; </lid>
+					</ul>
+				</div>
+				<div class="col-md-6">
+				<h3>Solving using other magical means such as modulo</h3>
+					<ul>
+						<li> var Big = n%d; </lid>
+						<li> var Small = (n -(d*b)); </li>
+						<li> Big + ' ' + Small + '/' + d; </li>
+					</ul>
+				</div>
+			</div>
+						
+				
+			
 
 
 

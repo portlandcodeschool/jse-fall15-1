@@ -1,3 +1,7 @@
+* {
+	list-style: none;
+}
+
 .title {
 	background-color: lightGray;
 	padding: 1em;
@@ -21,10 +25,25 @@ h3 {
 #part2 {
 	background-color: lightYellow;
 }
+
 #part3{
 	background-color: lightPink;
 }
 
 img {
 	max-width: 75%;
+}
+
+#part4 {
+	background-color: lightGreen;
+
+
+}
+
+.references {
+	background-color: lightGray;
+}
+
+#part5 {
+	background-color: Orange;
 }
