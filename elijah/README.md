@@ -185,7 +185,7 @@ Write an expression (or pair of conditional statements) to set a variable _color
     // if divisible by 2
     if ((!(n%2)) && (!(r%2))) {
         color = "black";
-    } else if ((!!(n%2)) &&  (!!(r%2))) {
+    } else if ((n%2) &&  (r%2)) {
         color = "black";
     } else {
         color = "white";
