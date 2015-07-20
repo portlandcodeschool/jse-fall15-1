@@ -241,5 +241,36 @@ print(Math.floor(n/d) + " " + n%d + "/" + d)
 
 b) Now solve it without calling any functions, using merely operators.  (Hint: you'll need at least the modulo operator _%_.)
 
-print(n/d + " " + n%d + "/" + d)
+n/d + " " + n%d + "/" + d
+
+This one is tough. How to find the number of times the numerator fits into the denomenator without the decimal places and without rounding. I have been testing 14/3 and 7/4. 
+
+14/3 = 4.6666
+7/4 = 1.75
+
+So I need 4 and 1 respectivly. I was thinking of changing the data into strings and somehow iterating over each charactor until a decimal was found, but that wouldn't work because the class hasn't hit on loops yet and I'm sure there is a way to do it without them. 
+
+The number that I'm searching for is the number of iterations of the numerator in the denominator. I was thinking of just using the first integer in the variable and assuming the iterations would only be 1 digit long. Ok new course. 
+
+These are the operators availible from our coursework that I think are relevant: - / * %
+
+How to make 14/3 = 4
+12/3= 4; 
+the difference between 12 and 14 is 2; 
+2 is a fraction of 3, the denomenator; calculate the difference between 14/3 and ; but I still need to round to do this... 
+subtract the fraction of the denominator (12/3) from gross iteration variable (14/3); 
+find the fraction of the denominator: 14%3 = 2
+subtract this from the denominator  n-(n%d); 3 - (14 % 3), 3 - (2), 1
+then divide numerator by denominator, thus factoring out remainder prior to calculation: n-(n%d); 14-(14%3); 14-(2); 12 (woot)
+Divide this modified numerator by denominator: ((n-(n%d))/d); ((14-(14%3))/3); ((14-(2))/3); ((12)/3); 4 (woot) 
+
+
+((n-(n%d))/d) + " " + n%d + "/" + d
+
+
+
+
+
+
+
 
