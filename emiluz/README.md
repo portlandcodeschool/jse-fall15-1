@@ -83,24 +83,39 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 
 a) Write an expression for the rectangle's area.
 
-	var b= (l,r) and (t,b)
+	a= (l + r) * (t + r)
 
 b) Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
-	if (l > r){
-		greeting="The rectangle is taller than wider"
+	
+	(t + b) > (l + r)
+
+	var c = 0;//we need to figure out which one is the smallest to determine the diameter for the 	 
+			    circle fit in the rectangle
+
+	if ((t + b ) > (l + r)){ // rectangle is taller than is wider 
+		c= Math.PI * (l + r);//use the width to determine diameter
 	}
-	else{
-		greeting="The rectange is not taller than wider"
+	else {
+		c= Math.PI * (t + b);//use the tallnest to determine diameter
 	}
+
 c) Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
+	
+	circumference of the circle = 2 * radius * PI
 
 d) Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
+
+ 	Area of Circle= radius * radius * PI
+
 
 e) Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
----
+	var a = 
+	var b =
+	var c =
+	var d =
 
 4) (_25%_)
 
