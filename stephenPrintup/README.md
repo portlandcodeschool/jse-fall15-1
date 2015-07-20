@@ -6,7 +6,7 @@ You need to turn in this homework by
 [X]cloning this repo, 
 [X]making a new branch with your solutions, 
 [X]pushing to github, and 
-[]issuing a pull request.
+[X]issuing a pull request.
 
 For details, follow the instructions [here](http://portlandcodeschool.github.io/jse/2015/01/07/command-line-and-git-slides/#/14).
 

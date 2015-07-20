@@ -133,15 +133,15 @@ integer,
 float, 
 string, 
 numeric string,
-string literal, 					<----review
+string literal, 					<----review: A string literal or anonymous string[1] is the representation of a string value within the source code of a computer program.
 concatenation, 
-interpolation,						<----review
+interpolation,						<----review: In computer programming, string interpolation or variable interpolation (also variable substitution or variable expansion) is the process of evaluating a string literal containing one or more placeholders, yielding a result in which the placeholders are replaced with their corresponding values.
 boolean, 
 expression, 
 statement, 
 primitive,
 auto-conversion, 					<----review
-type coercion, 						<----review
+type coercion, 						<----review: In computer science, type conversion, typecasting, and coercion are different ways of, implicitly or explicitly, changing an entity of one data type into another.
 parsing, 
 precedence,
 declare, 
@@ -151,36 +151,36 @@ REPL, 								<----review: Read Evaluate Print Loop
 mod,
 conditional, 
 condition, 
-consequent, 						<----review
+consequent, 						<----review: A consequent is the second half of a hypothetical proposition.
 block, 
-short-circuit, 						<----review
+short-circuit, 						<----review: Short-circuit evaluation, minimal evaluation, or McCarthy evaluation denotes the semantics of some Boolean operators in some programming languages in which the second argument is executed or evaluated only if the first argument does not suffice to determine the value of the expression: when the first argument of the AND function evaluates to false, the overall value must be false; and when the first argument of the OR function evaluates to true, the overall value must be true. 
 truthy/truish, 
 falsey/falsish_
 
 ### Skills
 You should be able to:
 
-[]* Work confidently in the console of at least one browser and in the node REPL.
+[X]* Work confidently in the console of at least one browser and in the node REPL.
 
 [X]* Declare and initialize variables, and use assignment and incremental assignment operators to modify them.
 
-[]* Articulate branching conditions both with and without boolean operators.
+[X]* Articulate branching conditions both with and without boolean operators.
 
-[]* Use short-circuit boolean operators in conditional evaluation.
+[X]* Use short-circuit boolean operators in conditional evaluation.
 
-[]* Anticipate the behavior of special Numbers (_NaN, Infinity_), non-integer numbers, and non-numbers in computations.
+[X]* Anticipate the behavior of special Numbers (_NaN, Infinity_), non-integer numbers, and non-numbers in computations.
 
 [X]* Use common mathematical functions from the Math and Number objects.
 
-[]* Manipulate variables to represent and solve simple arithmetic and geometric problems.
+[X]* Manipulate variables to represent and solve simple arithmetic and geometric problems.
 
-[]* Parse any expression, deconstructing it into a tree of constituent expressions and tracing their evaluation in the correct order.
+[X]* Parse any expression, deconstructing it into a tree of constituent expressions and tracing their evaluation in the correct order.
 
-[]* Notice all operators with side-effects and track any changes in the value of variables.
+[X]* Notice all operators with side-effects and track any changes in the value of variables.
 
-[]* Predict the exact result of any expression whose constituent values are known.
+[X]* Predict the exact result of any expression whose constituent values are known.
 
-[]* Reason about the possible behavior of expressions which contain some unknown values.
+[X]* Reason about the possible behavior of expressions which contain some unknown values.
 
 [X]* Trace on paper the execution of simple programs.
 
