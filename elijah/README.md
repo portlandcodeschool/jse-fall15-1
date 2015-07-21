@@ -150,9 +150,9 @@ Define four new variables describing the centermost small rectangle.
     width = (r - l);
     height = (b - t);
 
-    cl = width/3;
+    cl = l + width/3;
     cr = width - (width/3);
-    ct = height/3;
+    ct = b + height/3;
     cb = height - (height/3);
 
 ---
