@@ -18,39 +18,73 @@ Some of these are tricky!  Don't trust your first instinct.
 
 **a)** `"1" == 1`
 
+True, this is because it is comparing the values so even though one is a string it is coercing the value to be true.
+
 **b)** `"1" === 1`
 
+False, because when using triple equals you are comparing the pure values and a string does not equal the number.
+
 **c)** `x == 'x'`
+
+When x is undefined it cannot equal the other
 
 **d)** `x == (x+'')`
 
 **e)** `'' == ' '`
 
+False because the quotes do not equal the same type.
+
 **f)** `x = true`
+
+True, because we are defining x and it is a value therefore true.
 
 **g)** `var x; x == 'undefined'`
 
+False, because undefined is considered not a number therefore it cannot be equal to not a number because there is no value.
+
 **h)** `'9'<'10'`
+
+ True, because we have the less than symbol and 9 is less than 10
 
 **i)** `typeof x + 1 === "number"`
 
+  False because x + 1 does not equal an numbered string
+
 **j)** `typeof x % 2 === "number"`
+
+False because again the numbered string is not purely equal to the x we are using that is undefined.
 
 **k)** `typeof (x % 2) === "number"`
 
+False because again the typeof is not a string therefore it cannot equal a string
+
 **l)** `x++ == ++x`
+
+False because the type is not the same
 
 **m)** `++x == x++`
 
+  True, because both types are similar rather than undefined.
+
 **n)** `"1"+x == 1+x`
+
+ False, because adding a string to x is not the same as adding the number 1 to x
 
 **o)** `"0"+1 == 1`
 
+ True, because string 0 is undefined which means its 1 is equal to 1 both numbers.
+
 **p)** `(typeof (x+1))===(typeof x)`	
+
+ True, When you follow the sequence x+1 is equal to typeof x because both are the same type making it true.
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
 
+True because x is equal to x or type of x is not equal to a number string which is all true
+
 **r)** `(x=(typeof (x+(typeof x))))==x`
+
+   True, typeof x is equal to x.
 
 ---
 
@@ -63,11 +97,26 @@ Assume variables x, y, and z are numbers.
 **a)**
 Write an expression for the mean (i.e. average) of x, y, and z.
 
+variable x;
+x = 4
+
+variable y;
+y = 6
+
+variable z;
+z = 20
+
+(x+y+z)/3 
+
+
 **b)**
 Write a series of expressions to adjust each of x, y, and z halfway toward the mean of the three.
 That is, reset the value of each variable to something new based on its previous value.
 
----
+
+x + (mean - x)*.5;
+
+
 
 **3)** (_20%_)
 
@@ -81,19 +130,41 @@ Suppose you're encoding geometric shapes in a Cartesian (2D) coordinate system, 
 **a)**
 Write an expression for the rectangle's area.
 
+var x = l * b
+
+var l = 2
+
+var b = 4
+
+l * b = x
+
 **b)**
 Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
+ 
+var t = 2
+
+var l = 4
+
+(l * t)&&(!<=t)
 
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 
+var circumference;
+
+!(l<=t)&&((t*Math.Pl))
+
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
+
+(l<=t)&&(t * Math.Pl)||!(l<=t)&&(l * Math.Pl)
 
 **e)**
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
+
+
 
 ---
 
@@ -107,14 +178,24 @@ Imagine that the squares of an ordinary checkerboard are numbered in two differe
 
 **a)**  Given a particular R and C, find the corresponding N.  That is, write an expression for variable N containing variables R and C.
 
+var r = 7;
+
+var c = 7;
+
+r * c = n + 7 * 2
+
 **b)**  Given N, find R.  Write an expression for R which contains N.
 
+n - 7 * 2 = r
+
 **c)**  Given N, find C.  Write an expression for C which contains N.
+
+n - 14 / 2 = c
 
 **d)**  Assume the squares are colored black and white, with the upper-left square black.
 Write an expression (or pair of conditional statements) to set a variable _color_ to either 'black' or 'white', describing the square identified by variables R,C, and N (or a subset of them, if you don't need all three).
 
----
+if upper square r,c = 0,0  then color = black
 
 **5)** (_15%_)
 
@@ -125,4 +206,10 @@ Assuming variables _n_ and _d_ are defined in advance (but you don't know their 
 
 a) Solve it first by making use of a function called _Math.floor_.
 
+Math.floor (9/4) = 2
+
+
 b) Now solve it without calling any functions, using merely operators.  (Hint: you'll need at least the modulo operator _%_.)
+
+
+
