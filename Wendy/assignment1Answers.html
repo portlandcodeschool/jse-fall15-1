@@ -109,33 +109,47 @@
 				<div class="col-md-6">	
 				<h3> a.  Calculating Area of Rectangle</h3>
 				<ul>
-					<li> area = (l * t)
+					<li> area = (t-b)*(r-l)</li>
 				</ul>
 				<h3> b.  True If the rectangle is taller than it is wide... </h3>
 				<ul>
-					<li> area for rectangle with taller than wide (l * t)&&!(l<=t) </li>
+					<li> area for rectangle with taller than wide </li>
+					<li> (Math.abs(t-b))>(Math.abs(l-r))</li>
 				</ul>	
 				<h3> c.  Rectangle enclosing circle </h3>
 				<ul>	
 					<li> var circumference; </li>
-					<li> !(l<t)&&((t*Math.PI)</li>
+					<li> Step 1:  Determine length of the shortest side. </li>
+					<li> Step 2:  Multiply that number by Math.PI</li>
+					<li> (Math.abs((Math.abs(t-b))-(Math.abs(l-r))))*Math.PI; </li?
 				</ul>
 				</div>
 				<div class="col-md-6">
 				<h3> d.  The circle enclosing the rectangle</h3>
 				<ul>
-					<li> (l<=t)&&(t*Math.PI)||!(l<=t)&&(l*Math.PI) </li>
+					<li> Step 1:  Determine the length of the longest side.</li>
+					<li> Step 2:  Multiply that number by Math.PI</li>
+					<li> ((l-r)<(t-b)&&((t-b)*Math.PI))||((t-b)<(l-r)&&((l-r)*Math.PI));</li>
 				</ul>
 				<h3> e.  Variables for expressing smaller rectangles</h3>
 				<ul>
-					<li> var areaSmall (to represent the center small rectangle)</li>
+					<li> var areaSmall</li>
+					<li> 1. ((l-r)/3)*((t-b)/3) </li>
+					<li> var positionT</li>
+					<li> 2. (t-b)/3 + b + (t-b)/3;;</li>
+					<li> varSquare (boolean checking if the small rec is a square)
+					<li> 3. (Math.abs(t-b))===(Math.abs(r-l))</li>
+					<li> var positionR</li>
+					<li> 4. (l-r)/3 + r + (l-r)/3;
+
+					<!-- <li> var areaSmall (to represent the center small rectangle)</li>
 					<li> 1. areaSmall = (t/3)*(l/3)</li>
 					<li> var tallSmall (to represent the tallest side)</li>
 					<li> 2. var tallSmall = (l>=t)&&(l/3)||!(l>=t)&&(t/3)</li>
 					<li> var shortSmall (to reperesent the shorter side)</li>
 					<li> 3. var shortSmall = (l<=t)&&(l/3)||(t<=l)&&(t/3)</li>
 					<li> var square (boolean checking if the small rectangle is a square)
-					</li> 4. varSquare = ((t-l) === 0)</li>
+					</li> 4. varSquare = ((t-l) === 0)</li> -->
 				</ul>
 				</div>
 			</div>	
@@ -175,7 +189,7 @@
 			
 			<div class="row" id ="part5">
 			<h3>Part V</h3>
-			<h3>Represenation of a fraction (n/d) with 2 integer variables.</h3>
+			<h3>Representation of a fraction (n/d) with 2 integer variables.</h3>
 				<div class="col-md-6">
 				<h3> Solving using Math.floor</h3>
 					<ul>
