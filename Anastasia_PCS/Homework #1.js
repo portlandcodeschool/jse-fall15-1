@@ -25,7 +25,7 @@ c) x == 'x' //TRUE - compares value only
 
 d) x == (x+'') //TRUE - compares value only
 
-e) '' == ' ' //FALSE - an empty string is "falsey"
+e) '' == ' ' //FALSE - an empty string is "falsey" - Also, "undefined" == "string"
 
 f) x = true //TRUE 
 
@@ -39,9 +39,9 @@ j) typeof x % 2 === "number" //FALSE - a NaN is not a String
 
 k) typeof (x % 2) === "number" //TRUE - x % 2 = "number" so "number" === "number"
 
-l) x++ == ++x ??????????????????????????????????????????????????
+l) x++ == ++x // FALSE - 10 != 11
 
-m) ++x == x++ ??????????????????????????????????????????????????
+m) ++x == x++ //TRUE - 11 = 11
 
 n) "1"+x == 1+x //FALSE - string "1" is not the same as number 1
 
@@ -49,9 +49,9 @@ o) "0"+1 == 1 //TRUE - "0"+1 = 01 which is equal to the value 1
 
 p) (typeof (x+1))===(typeof x) //TRUE because "number" === "number"
 
-q) (x*1 == x) || ((typeof x) != "number") //TRUE - x! ==x = True 
+q) (x*1 == x) || ((typeof x) != "number") //TRUE - x! ==x = True, so there is no need to review the comparative value.
 
-r) (x=(typeof (x+(typeof x))))==x //TRUE - type of x ==x, 
+r) (x=(typeof (x+(typeof x))))==x //TRUE
 
 
 
@@ -71,16 +71,10 @@ r) (x=(typeof (x+(typeof x))))==x //TRUE - type of x ==x,
 //b) Write a series of expressions to adjust each of x, y, and z halfway toward the mean of the three. 
 //That is, reset the value of each variable to something new based on its previous value.//
 
-var x=3;
-var y=2;
-var z = 1;
-
-
 var average = (x+y+z/3);
-x = (x+average )/2;
-y = (y+average )/2;
-z = (z+average )/2;
-console.log(average); // 3.16 //
+newX=((average-x)/2) + x;
+newY=((average-y)/2) + y;
+newZ=((average-z)/2) + z;
 
 //3) (20%)
 
@@ -93,53 +87,84 @@ t : vertical position of top edge;
 b : vertical position of bottom edge.
 
 //a) Write an expression for the rectangle's area.
-var l = 5;
-var r = 5;
-var t = 3; 
-var b = 3;
+//var l = 5;
+//var r = 5;
+//var t = 3; 
+//var b = 3;
 
-var area = (b)*(l);
-	console.log(area);
+var area = (t-b)*(l-r);
+	//console.log(area); = 15
 
 
 //b) Write an expression which is true if the rectangle is taller than it is wide, and false otherwise.
 
-if (l>b){
-    console.log("true");
+if ((l-r)>(t-b)) {
+	console.log (true);
 }else{
-    console.log("false");
+	console.log (false);
 };
 
 
 //c) Write an expression for the circumference of the biggest circle which can fit inside the rectangle. 
 //(Hint: you'll need logic similar to that in b.)
 
-var radius = b/2;
-var circumference = 2 * Math.PI * radius;
-console.log(circumference);
+if ((t-b) > (r-l)) {
+	var diameter = (r-1);
+} else {
+	diameter = (t-b);
+}
+var circumference = (diameter * Math.PI);
+console.log(circumference); 
+
+//or
+
+var isTall = (t-b) > (r-l);
+var isWide = (t-b) < (r-l);
+if (isTall) {
+	var diameter = (r-1);
+}
+else(isWide);{
+	diameter = (t-b); 
+}
+var circumference = (diameter * Math.PI);
+console.log(circumference); 
 
 //d) Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) 
 //the rectangle.
 
-var radius = b/2;
-var radiusSquared = radius^2;
-var areaCircle = Math.PI * radiusSquared;
-console.log(areaCircle);
+var t = 7;
+var b = 3;
+var l = 2;
+var r = 8;
 
+var diameterSquared;
+var diameter;
+
+var topBottom = (t-b);
+var leftRight = (r-l);
+
+diameterSquared = Math.pow(leftRight, 2) + Math.pow(topBottom, 2);
+diameter = Math.sqrt(diameterSquared);
+console.log(diameter);
 
 //e) Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 
 //smaller rectangles, identical in shape but varying by position. Define four new variables describing the 
 //centermost small rectangle. (Hint: one of the many solutions is very similar to the solution of 2b above.)
 
-var smallRectangleL = l/3;
-	console.log(smallRectangleL);
-var smallRectangleR = r/3;
-	console.log(smallRectangleR);
-var smallRectangleT = t/3;
-	console.log(smallRectangleT);
-var smallRectangleB = b/3;
-	console.log(smallRectangleB);
+var t = 700;
+var b = 300;
+var l = 200; 
+var r = 800;
 
+var horizontal =  ((r-1)/3);
+var vertical = ((t-b)/3);
+
+ var newLeft = (1 + horizontal);
+ var newRight = (1 - horizontal);
+ var newBottom = (1 + vertical);
+ var newTop = (1 - vertical);
+
+console.log(newLeft, newRight, newBottom, newTop);
 
 //4) (25%)
 
@@ -167,18 +192,35 @@ var N = (8 * R) + C;
 
 //b) Given N, find R. Write an expression for R which contains N.
 
-var R = (N-C)/8);
+var R = (N - (N % 8)) /8;
 
 //c) Given N, find C. Write an expression for C which contains N.
 
-var C = (R*8)+N;
+var C = (N % 8);
 
 //d) Assume the squares are colored black and white, with the upper-left square black. Write an 
 //expression (or pair of conditional statements) to set a variable color to either 'black' or 'white'
 //, describing the square identified by variables R,C, and N (or a subset of them, if you don't need 
 //all three).
 
-var boardColor = (r%2 == r%2) ? '#000000': '#ffffff';
+var evenRow = (r % 2 === 0);
+var oddRow = (r% 2 !== 0);
+var evenN = (n % 2 === 0);
+var oddN = (n% 2 !== 0);
+var color;
+
+if (evenRow && evenN) {
+	var color = 'black';
+} else if (oddRow && oddN){
+	var color = 'white';
+}
+
+if (oddRow && oddN) {
+    var color = 'black';
+}else if (evenRow && evenN){
+    var color = 'white';
+}
+
 
 //5) (15%)
 
@@ -193,12 +235,18 @@ var boardColor = (r%2 == r%2) ? '#000000': '#ffffff';
 
 //a) Solve it first by making use of a function called Math.floor.
 
-
+var n;
+var d;
+var remainder = n % d;
 var wholeNumber = Math.floor(n/d);
+var result = wholeNumber + " " + remainder + '/' + d;
 
 
 //b) Now solve it without calling any functions, using merely operators. (Hint: you'll need at least 
 //the modulo operator %.)
+
 var remainder = n % d;
-var wholeNumber = Math.floor(n/d);
-var result = wholeNumber + remainder + '/' + d;
+var wholeNumber = ((n - remainder)/d);
+var result = wholeNumber + " " + remainder + '/' + d;
+console.log(result);
+
