@@ -26,6 +26,7 @@ Some of these are tricky!  Don't trust your first instinct.
 
 prediction 	11							<---wrong
 result 		true
+review 		The equality operator coerces string "1" to numeric 1 and finds 1==1.
 
 **b)** `"1" === 1`
 
@@ -36,6 +37,7 @@ result      false
 
 prediction true								<----wrong
 result     undefined
+review 		false UNLESS x is literally string 'x'
 
 **d)** `x == (x+'')`
 
@@ -46,6 +48,7 @@ result     undefined
 
 prediction  true							<----wrong
 result      false
+review 		false.  Empty string '' is unequal to all non-empty strings.
 
 **f)** `x = true`
 
@@ -56,11 +59,14 @@ result      true
 
 prediction  undefined							<----wrong
 result      false
+review		false UNLESS x was declared earlier to be the string 'undefined'.  The first declaration `var x` sets x equal to undefined (special value), not string 'undefined'.  Subsequent declarations `var x` do nothing.
+	
 
 **h)** `'9'<'10'`
 
 prediction true
 result     false 				            	<---reveiw
+review 		false.  Strings are compared alphabetically, and '9'>'1*' for any *.
 
 **i)** `typeof x + 1 === "number"`
 
@@ -76,6 +82,7 @@ result     false
 
 prediction false, because "number" is a string
 result    true                      				<----review
+review		true.  The % operator always yields a number (possibly NaN).
 
 **l)** `x++ == ++x`
 
@@ -86,11 +93,19 @@ result     false
 
 prediction false, ++x will produce a number with a left over + and x ++ will add a number
 result     undefined									<---review
+review		 true UNLESS x is non-numeric string.  If non-numeric string (e.g. 'apple'), this becomes `NaN == NaN`.
+
 
 **n)** `"1"+x == 1+x`
 
 prediction false, "1" + x produces string and 1 + x could produce string
 result      undefined										<----review
+review	 
+	true when x is any string:
+    '1'+x == 1+x
+    '1'+'****' == 1+x
+    '1****' == 1+x
+    '1****' == '1****'
 
 **o)** `"0"+1 == 1`
 
@@ -101,16 +116,25 @@ result true, "0" + 1 = "01", which is still truthy
 
 prediction false, first is a number second is undefined, ===
 result     undefined											<----wrong
+review		 true if x is a number or string.  If number, then both (x+1) and x are type 'number'; if string, then both are type 'string'.  But if x is type 'boolean' then (x+1) is type 'number' (since true+1 is 2 and false+1 is 1).
+
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
 
 prediction  true, if x is a string it is set to number then a string (left) and on the right it is a string which is not a number
 result      undefined									<----reveiw
+review 		 true UNLESS x is NaN.  For non-numbers, the right-hand side of the || is true, and for numbers except NaN, the left side is true.  For NaN, both sides are false, so the whole thing is false.
+
 
 **r)** `(x=(typeof (x+(typeof x))))==x`
 
 prediction   true, because nothing is changing
-result       undefined									<----review
+result       true									<----review
+review		true.  For any x, this becomes:
+    (x=(typeof (x+'*****')))==x
+    (x=(typeof 'x*****'))==x
+    (x='string') == x
+    'string' == 'string'
 
 ---
 
@@ -133,6 +157,11 @@ var mean = (x + y + z)/3
 x = x/mean
 y = y/mean
 z = z/mean
+
+answer: 
+x+= (mean-x)/2;
+y+= (mean-y)/2;
+z+= (mean-z)/2;
 
 ---
 
@@ -157,6 +186,8 @@ Write an expression which is true if the rectangle is taller than it is wide, an
 
 if (length > width)
 
+answer: var isTall = (t-b)>(r-l);
+
 **c)**
 Write an expression for the circumference of the biggest circle which can fit inside the rectangle.  (Hint: you'll need logic similar to that in **b**.)
 
@@ -165,6 +196,21 @@ var smallRadius = if (length < width) {
 					return width /2
 				};
 var biggestInnerCircleCircumference = Math.PI(smallRadius)^2
+
+answer: 
+var smallerDiam;
+var isTall = (t-b)>(r-l);
+
+if (isTall) {
+    smallerDiam = r-l;
+} else {
+    smallerDiam = t-b;
+//OR:
+var smallerDiam = isTall? (r-l): (t-b);
+//OR:
+var smallerDiam = (r-l)*isTall + (t-b)*(!isTall);
+
+var circumference = smallerDiam * Math.PI;
 
 **d)**
 Write an expression for the area of the smallest circle which completely encloses (i.e. circumscribes) the rectangle.
@@ -175,12 +221,24 @@ var c = ((a^2)+(b^2))
 var bigRadius =c^2
 var biggestInnerCircleCircumference = Math.PI(bigRadius)^2
 
+review:
+var w = r-l,
+    h = t-b,
+    diamSquared = h*h + w*w,
+    radiusSquared = diamSquared/4,
+    area = Math.PI * radiusSquared;
+
 
 **e)**
 Imagine subdividing your rectangle into 3 equal rows and 3 equal columns, which would create 9 smaller rectangles, identical in shape but varying by position.
 Define four new variables describing the centermost small rectangle.
 (_Hint: one of the many solutions is very similar to the solution of **2b** above._)
 
+answer: 
+var lc = (2*l + r)/3;
+var rc = (2*r + l)/3;
+var tc = (2*t + b)/3;
+var bc = (2*b + t)/3;
 
 
 ---
@@ -221,6 +279,12 @@ if (Math.even(N)) {
 	color = white;
 	} else { color = black;};
 
+answer:
+if (r%2 == c%2) {
+    var color = 'black';
+} else {
+    var color = 'white';
+}
 
 ---
 
@@ -237,7 +301,10 @@ d = denominator
 a) Solve it first by making use of a function called _Math.floor_.
 
 print(Math.floor(n/d) + " " + n%d + "/" + d)
-
+answer:
+var remainder = n % d;
+var wholes = Math.floor(n/d);
+var result = wholes + ' ' + remainder + '/' + d;
 
 b) Now solve it without calling any functions, using merely operators.  (Hint: you'll need at least the modulo operator _%_.)
 
@@ -267,7 +334,11 @@ Divide this modified numerator by denominator: ((n-(n%d))/d); ((14-(14%3))/3); (
 
 ((n-(n%d))/d) + " " + n%d + "/" + d
 
-
+answer:
+var remainder = n % d;
+var evenlyDivisible = n - remainder;
+var wholes = evenlyDivisible / d;       //always an integer!
+var result = wholes + ' ' + remainder + '/' + d;
 
 
 
