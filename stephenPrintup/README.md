@@ -116,7 +116,7 @@ result true, "0" + 1 = "01", which is still truthy
 
 prediction false, first is a number second is undefined, ===
 result     undefined											<----wrong
-review		 true if x is a number or string.  If number, then both (x+1) and x are type 'number'; if string, then both are type 'string'.  But if x is type 'boolean' then (x+1) is type 'number' (since true+1 is 2 and false+1 is 1).
+<br>review		<strong> true if x is a number or string.  If number, then both (x+1) and x are type 'number'; if string, then both are type 'string'.  But if x is type 'boolean' then (x+1) is type 'number' (since true+1 is 2 and false+1 is 1).</strong>
 
 
 **q)** `(x*1 == x) || ((typeof x) != "number")`
